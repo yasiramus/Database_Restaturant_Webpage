@@ -1,0 +1,30 @@
+<%- include('./Partial/head.ejs') %>
+
+    <body>
+        <%- include('./Partial/nav.ejs') %>
+            <section id="contactus">
+                <form action="/" method="post" target="_blank" class="response" id="form-submit">
+                    <legend>Kindly let us what you think:</legend>
+                    <label>Name *:</label>
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <label>Comment *:</label>
+                    <textarea name="comment" placeholder="Your message" id="textarea" rows="10" cols="30"
+                        required></textarea>
+                    <div class="star-rating">
+                        <span class="fa fa-star star"></span>
+                        <span class="fa fa-star star"></span>
+                        <span class="fa fa-star star"></span>
+                        <span class="fa fa-star star"></span>
+                        <span class="fa fa-star star"></span>
+                        <div class="rating text-center">Rate</div>
+                    </div>
+                    <input type="hidden" name="rating" id="starInput">
+                    <div id="submit">
+                        <input type="reset" value="Cancel" class=" bg">
+                        <input type="submit" value="Submit" class=" bg" onclick = myFunction()>
+                    </div>
+                </form>
+            </section>
+            <%- include('./Partial/footer.ejs') %>
+            <script src="../Js/contact.js"></script>
+    </body>
