@@ -13,8 +13,7 @@
                         </tr>
                     </thead>
                     <% if (formList.length> 0 ) { %>
-                        <% formList.forEach(form=> { %>
-
+                        <% formList.slice(formList.length-20, formList.length).reverse().forEach(form=> { %>
                             <tbody>
                                 <tr id="tr">
                                     <td>
