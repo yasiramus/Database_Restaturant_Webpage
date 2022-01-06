@@ -25,7 +25,9 @@ mongoose.connect('mongodb://localhost:27017/Contact_Us', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }).then((result) => {
-	console.log("mongodb connected ");
+	if(result){
+		console.log("mongodb connected ");
+	}
 }).catch((err) => {
 		console.log(err);
 	});
@@ -38,9 +40,9 @@ app.get('/', (req, res) => {
 app.get('/contact', (req, res) => {
 	res.render('contact', { title: 'contact us' })
 });
-app.get('/result', (req, res) => {
-	res.render('result', { title: 'Form Submission', data: req.body })
-})
+// app.get('/result', (req, res) => {
+// 	res.render('result',{title:'Form Submission',data:req.body})
+// })
 
 //creating form and submission
 app.post("/", function (req, res,) {
@@ -49,16 +51,16 @@ app.post("/", function (req, res,) {
 		comment: req.body.comment,
 		rating: req.body.rating
 	}
-	Form.create(formData, function (err, newlyCreatedForm) {
+	Form.create(formData, function (err) {
 		if (err) {
 			throw err;
 		}
-		else {
-			res.redirect('/result')
-		}
+		// else {
+		// 	res.redirect('/result')
+		// }
 	});
 	console.log(req.body)
-	// res.render("result", {title:'Form Submission', data:req.body});
+	res.render("result", {title:'Form Submission', data:req.body});
 });
 
 //fetching data
@@ -73,6 +75,7 @@ app.get("/output", (req, res) => {
 	})
 });
 
+//error page
 app.use((req, res) => {
 	res.render('404', { title: "404" })
 })

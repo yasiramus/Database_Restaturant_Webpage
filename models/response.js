@@ -4,8 +4,14 @@ var mongoose=require("mongoose");
 
 // Schema
 var responseSchema = new mongoose.Schema({
-	name : 'String',
-	comment:String,
+	name: {
+		type: String,
+		required: true
+	},
+	comment: {
+		type: String,
+		required: true
+	},
 	rating: Number
 });
 
