@@ -73,3 +73,5 @@ const myFunction = () => {
     //clearr data after submission
     document.getElementById('form-submit').reset();
   }
+
+

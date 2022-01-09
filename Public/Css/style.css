@@ -647,64 +647,7 @@ input::placeholder{
   background-color: #fd9d16;
   color: #000;
 }
-/* table section */
-#Table-data {
-  background-image: url(../Images/bg36.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: auto;
-  padding: 60px 0 100px 0;
-}
-table {
-  border-collapse: collapse;
-  width: 80%;
-  text-align: center;
-  border: 1px solid#252830;
-  box-shadow: rgb(6 22 33 / 60%) 0px 5px 15px;
-  margin: auto;
-  color: #fff;
-}
-table caption{
-  margin: 50px 0;
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-weight: bolder;
-}
 
-td{
-  /* border: 1px solid #dddddd; */
- padding: 8px 0; 
-}
-thead {
-  background-color:#252830;
-  color: #fff;
-  font-size: 1.5rem;
-  font-family: bold;
-  height: 5em;
-  /* text-align: center; */
-}
-tbody:nth-child(odd){
-  background-color: #969494;
-}
-tbody{
-  height: 2.5em;
-  /* text-align: left; */
-}
-
-tbody:hover{
-  background-color: #00c2f3;
-}
-
-.output-content{
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 300;
-  word-spacing: 10px;
-  position: relative;
-  top: 7em;
-  color: #ffffff;
-}
 /* footer section */
 footer {
   background: #252830;

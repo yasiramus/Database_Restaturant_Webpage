@@ -1,0 +1,46 @@
+<%- include('./Partial/head.ejs') %>
+
+    <body>
+        <%- include('./Partial/nav.ejs') %>
+            <div id="Table-data">
+                <table>
+                    <caption>FeedBacks From Our Customers</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Message</th>
+                            <th>Number Of Rate</th>
+                        </tr>
+                    </thead>
+                    <% if (formList.length> 0 ) { %>
+                        <% formList.slice(formList.length-20, formList.length).reverse().forEach(form=> { %>
+                            <tbody>
+                                <tr id="tr">
+                                    <td>
+                                        <%= form.name%>
+                                    </td>
+                                    <td>
+                                        <%= form.comment%>
+                                    </td>
+                                    <td>
+                                        <div class="star-rating">
+                                            <% for( let index = 0; index < form.rating; index++ ) { %>
+                                                <span class="fa fa-star star"></span>
+                                            <% } %>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <% }) %>
+                    <% } else { %>
+                            <p class="output-content">
+                                <%="There's no content at the moment"%>
+                            </p>
+                        <% }%>
+                </table>
+                        <a href="/">Back To Home Page</a>
+            </div>
+    </body>
+    <!-- <h1>here</h1> -->
+    <%- include('./Partial/footer.ejs') %>
+        <!-- <script src="../Js/contact.js"></script> -->

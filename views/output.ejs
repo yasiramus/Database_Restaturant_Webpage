@@ -1,46 +1,42 @@
-<%- include('./Partial/head.ejs') %>
+<%- include('./Partial/contactHead.ejs') %>
 
     <body>
         <%- include('./Partial/nav.ejs') %>
-            <div id="Table-data">
-                <table>
-                    <caption>FeedBacks From Our Customers</caption>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Message</th>
-                            <th>Number Of Rate</th>
-                        </tr>
-                    </thead>
+            <div id="sliding-content">
+                <div class="content">
                     <% if (formList.length> 0 ) { %>
+
                         <% formList.slice(formList.length-20, formList.length).reverse().forEach(form=> { %>
-                            <tbody>
-                                <tr id="tr">
-                                    <td>
-                                        <%= form.name%>
-                                    </td>
-                                    <td>
-                                        <%= form.comment%>
-                                    </td>
-                                    <td>
-                                        <div class="star-rating">
-                                            <% for( let index = 0; index < form.rating; index++ ) { %>
-                                                <span class="fa fa-star star"></span>
-                                            <% } %>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        <% }) %>
-                    <% } else { %>
-                            <p class="output-content">
-                                <%="There's no content at the moment"%>
-                            </p>
-                        <% }%>
-                </table>
-                        <a href="/">Back To Home Page</a>
+                            <div class="mySlides">
+                                <div class="star-icons">
+                                    <% for( let index=0; index < form.rating; index++ ) { %>
+                                        <span class="fa fa-star star"></span>
+                                        <% } %>
+                                </div>
+                                <h3>
+                                    <%= form.comment%>
+                                </h3>
+                                <p>
+                                    <%= form.name%>
+                                </p>
+                            </div>
+                            <% }) %>
+                                <% } else { %>
+                                    <p class="output-content">
+                                        <%="There's no content at the moment"%>
+                                    </p>
+                                    <% }%>
+                </div>
+                <div id="dot">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+                <a href="/">Back To Home Page</a>
             </div>
+            <%- include('./Partial/footer.ejs') %>
+                <script src="../Js/output.js"></script>
     </body>
-    <!-- <h1>here</h1> -->
-    <%- include('./Partial/footer.ejs') %>
-        <script src="../Js/index.js"></script>
