@@ -34,7 +34,14 @@ mongoose.connect('mongodb://localhost:27017/Contact_Us', {
 
 
 app.get('/', (req, res) => {
-	res.render('home', { title: 'Restaturant Landing Page' })
+	Response.find({}, function (err, form) {
+		if (err) {
+				console.log(err)
+		}
+		if(form){
+			res.render('home', { title: 'Restaturant Landing Page' ,formList:form})
+		}
+	})
 });
 
 app.get('/contact', (req, res) => {
@@ -72,6 +79,7 @@ app.get("/output", (req, res) => {
 		if (form) {
 			res.render('output', { title: 'About session', formList: form })
 		};
+		console.log(form.length)
 	})
 });
 

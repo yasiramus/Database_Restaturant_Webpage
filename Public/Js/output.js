@@ -5,30 +5,35 @@ window.addEventListener('scroll', function () {
 })
 //sliding section
 var slideIndex = 1;
-function showSlides(n) {
-    var i;
+function showSlides(sliding) {
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { 
+    var i;
+    if (sliding > slides.length) { 
         slideIndex = 1 
+        console.log(slides.length)
     }
-    if (n < 1) { 
-        slideIndex = slides.length 
-    }
-    for (i = 0; i < slides.length; i++) {
+    // if (sliding < 1) { 
+    //     slideIndex = slides.length 
+    // }
+    //looping through the slides content
+    for ( let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     slideIndex++;
     //this responsible for the recouting after it get to require number it actomatical restart
     if (slideIndex > slides.length) {
         slideIndex = 1
+        console.log(slides.length)
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
+    //this is for the dot
+    //looping through the doit
+    // for (let i = 0; i < dots.length; i++) {
+    //     dots[i].className = dots[i].className.replace(" active", "");
+    // }
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 2000);
+    // dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 10000);
 }
 showSlides(slideIndex);
 
