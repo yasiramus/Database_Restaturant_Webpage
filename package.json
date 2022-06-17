@@ -4,7 +4,7 @@
   "description": "rendering a restaturant web page using ejs, fatching data(api)",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "yasira musah",
