@@ -20,8 +20,13 @@ app.use(cors());
 //setting the ejs engine
 app.set('view engine', 'ejs');
 
+const url = "mongodb+srv://Yasira:Sira211818@cluster0.lxgsp.mongodb.net/Restaturant?retryWrites=true&w=majority";
+
 // Connecting to database using mongoose
-mongoose.connect('mongodb://localhost:27017/Contact_Us', {
+mongoose.connect(
+	// 'mongodb://localhost:27017/Contact_Us',
+	url,
+	{
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }).then((result) => {
